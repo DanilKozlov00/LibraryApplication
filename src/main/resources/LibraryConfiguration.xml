@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+    <Dictionary dictionaryName="First" separator=" " dictionaryPath = "src/main/resources/Dictionaries/1.txt">
+        <Key keyLength="{4}" keyPattern="[a-zA-z]"/>
+        <Value valueLength="{4}" valuePattern="[а-яёА-ЯЁ]"/>
+    </Dictionary>
+    <Dictionary dictionaryName="Second" separator=";" dictionaryPath = "src/main/resources/Dictionaries/2.txt">
+        <Key keyLength="{5}" keyPattern="[0-9]"/>
+        <Value valueLength="{5}" valuePattern="[а-яёА-ЯЁ]"/>
+    </Dictionary>
+</Library>

@@ -1,10 +1,13 @@
 package dao;
 
+import org.springframework.stereotype.Repository;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Repository
 public class DictionaryXmlData implements DictionaryData {
 
     private final String dictionaryPath;

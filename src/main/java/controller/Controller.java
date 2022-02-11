@@ -7,6 +7,8 @@ import view.actions.*;
 import java.util.LinkedList;
 import java.util.List;
 
+
+@org.springframework.stereotype.Controller
 public class Controller {
 
     private final List<? extends DictionaryTemplate> dictionaries;
@@ -52,6 +54,5 @@ public class Controller {
             return !action.getClass().equals(ExitAction.class);
         }
     }
-
 
 }

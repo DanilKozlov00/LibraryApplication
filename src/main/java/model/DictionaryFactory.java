@@ -1,5 +1,6 @@
 package model;
 
+import org.springframework.stereotype.Component;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import utils.configuration.Config;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+@Component
 public class DictionaryFactory {
 
     LibraryConfig libraryConfig;

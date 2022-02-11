@@ -21,6 +21,7 @@ public class Dictionary implements DictionaryTemplate {
         this.dictionaryName = libraryConfig.getDictionaryName();
     }
 
+    @Override
     public String getDictionaryName() {
         return dictionaryName;
     }
@@ -63,12 +64,11 @@ public class Dictionary implements DictionaryTemplate {
 
     @Override
     public DictionaryData getDictionaryData() {
-        return this.dictionaryXmlData;
+        return dictionaryXmlData;
     }
 
     @Override
     public Map<String, String> getDictionaryPairs() {
-        return null;
+        return dictionaryPairs;
     }
-
 }

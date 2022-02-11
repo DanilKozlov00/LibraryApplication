@@ -1,6 +1,5 @@
 package view.actions;
 
-import model.Dictionary;
 import model.DictionaryTemplate;
 
 public class ExitAction implements Action {

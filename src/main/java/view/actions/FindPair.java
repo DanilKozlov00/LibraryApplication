@@ -1,6 +1,5 @@
 package view.actions;
 
-import model.Dictionary;
 import model.DictionaryTemplate;
 import view.View;
 

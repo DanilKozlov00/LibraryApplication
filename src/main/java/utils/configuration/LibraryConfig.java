@@ -1,5 +1,6 @@
 package utils.configuration;
 
+import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+@Component
 public class LibraryConfig {
 
     static final String CONFIG_FILE = "src/main/resources/LibraryConfiguration.xml";

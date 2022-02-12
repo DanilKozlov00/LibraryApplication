@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="MMTR_Test_Task" />
         <module name="MMTR" />
+        <module name="LibraryApplication" />
       </profile>
     </annotationProcessing>
   </component>

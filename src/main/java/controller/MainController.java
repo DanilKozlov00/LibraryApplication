@@ -1,6 +1,7 @@
 package controller;
 
 import model.DictionaryTemplate;
+import org.springframework.stereotype.Controller;
 import view.ViewTemplate;
 import view.actions.*;
 
@@ -8,8 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-@org.springframework.stereotype.Controller
-public class Controller {
+@Controller
+public class MainController {
 
     private final List<? extends DictionaryTemplate> dictionaries;
     private DictionaryTemplate dictionary;
@@ -24,7 +25,7 @@ public class Controller {
     }};
 
 
-    public Controller(List<? extends DictionaryTemplate> dictionaries, ViewTemplate view) {
+    public MainController(List<? extends DictionaryTemplate> dictionaries, ViewTemplate view) {
         this.dictionaries = dictionaries;
         this.view = view;
     }

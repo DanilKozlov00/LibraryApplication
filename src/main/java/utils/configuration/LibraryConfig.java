@@ -22,12 +22,19 @@ public class LibraryConfig {
 
     static final String CONFIG_FILE = "src/main/resources/LibraryConfiguration.xml";
 
-    public NodeList readConfig() throws ParserConfigurationException, IOException, SAXException {
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(new File(CONFIG_FILE));
-        removeWhitespace(document);
-        return document.getDocumentElement().getElementsByTagName("Dictionary");
+    public NodeList readConfig() {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document document = builder.parse(new File(CONFIG_FILE));
+            removeWhitespace(document);
+            return document.getDocumentElement().getElementsByTagName("Dictionary");
+        } catch (ParserConfigurationException | SAXException xmlException) {
+            System.err.println("Error while parse config file");
+        } catch (IOException ioException) {
+            System.err.println("Error while read file");
+        }
+        return null;
     }
 
     public static void removeWhitespace(Document document) {

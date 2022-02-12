@@ -1,6 +1,6 @@
 package spring;
 
-import controller.Controller;
+import controller.MainController;
 import model.Dictionary;
 import model.DictionaryFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -19,15 +19,11 @@ public class SpringRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        try {
             DictionaryFactory dictionaryFactory = new DictionaryFactory(new LibraryConfig());
             List<Dictionary> dictionaryList = dictionaryFactory.getDictionary();
             View view = new View();
-            Controller controller = new Controller(dictionaryList, view);
-            controller.run();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            MainController mainController = new MainController(dictionaryList, view);
+            mainController.run();
     }
 }
 

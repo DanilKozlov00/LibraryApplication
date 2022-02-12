@@ -1,13 +1,11 @@
 package model;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 import utils.configuration.Config;
 import utils.configuration.LibraryConfig;
 
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,11 +14,12 @@ public class DictionaryFactory {
 
     LibraryConfig libraryConfig;
 
+    @Autowired
     public DictionaryFactory(LibraryConfig libraryConfig) {
         this.libraryConfig = libraryConfig;
     }
 
-    public List<Dictionary> getDictionary() throws ParserConfigurationException, IOException, SAXException {
+    public List<Dictionary> getDictionary() {
         List<Dictionary> dictionaryList = new LinkedList<>();
         NodeList dictionaryConfigList = libraryConfig.readConfig();
         for (int i = 0; i < dictionaryConfigList.getLength(); i++) {

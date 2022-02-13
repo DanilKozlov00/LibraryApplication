@@ -1,11 +1,13 @@
 package view;
 
 import model.DictionaryTemplate;
+import org.springframework.stereotype.Component;
 import view.actions.Action;
 
 import java.util.List;
 import java.util.Scanner;
 
+@Component
 public class View implements ViewTemplate {
 
     public static final Scanner input = new Scanner(System.in);

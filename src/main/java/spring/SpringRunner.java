@@ -1,28 +1,29 @@
 package spring;
 
 import controller.MainController;
-import model.Dictionary;
-import model.DictionaryFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import utils.configuration.LibraryConfig;
-import view.View;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-import java.util.List;
 
+@Configuration
+@ComponentScan({"model","utils","controller","view"})
 @SpringBootApplication
 public class SpringRunner implements CommandLineRunner {
+
+    static AnnotationConfigApplicationContext context;
+
     public static void main(String[] args) {
+        context = new AnnotationConfigApplicationContext(SpringRunner.class);
         SpringApplication.run(SpringRunner.class, args).close();
     }
 
     @Override
     public void run(String... args) {
-            DictionaryFactory dictionaryFactory = new DictionaryFactory(new LibraryConfig());
-            List<Dictionary> dictionaryList = dictionaryFactory.getDictionary();
-            View view = new View();
-            MainController mainController = new MainController(dictionaryList, view);
+            MainController mainController = context.getBean(MainController.class);
             mainController.run();
     }
 }

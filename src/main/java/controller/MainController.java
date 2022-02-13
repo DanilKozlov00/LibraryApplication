@@ -8,7 +8,6 @@ import view.actions.*;
 import java.util.LinkedList;
 import java.util.List;
 
-
 @Controller
 public class MainController {
 
@@ -51,7 +50,7 @@ public class MainController {
     private boolean checkExit(Action action) {
         if (action == null) {
             return true;
-        } else  {
+        } else {
             return !action.getClass().equals(ExitAction.class);
         }
     }

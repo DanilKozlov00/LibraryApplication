@@ -1,6 +1,6 @@
 package model;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.NodeList;
 import utils.configuration.Config;
@@ -14,12 +14,12 @@ public class DictionaryFactory {
 
     LibraryConfig libraryConfig;
 
-    @Autowired
     public DictionaryFactory(LibraryConfig libraryConfig) {
         this.libraryConfig = libraryConfig;
     }
 
-    public List<Dictionary> getDictionary() {
+    @Bean
+    public List<Dictionary> getDictionaries() {
         List<Dictionary> dictionaryList = new LinkedList<>();
         NodeList dictionaryConfigList = libraryConfig.readConfig();
         for (int i = 0; i < dictionaryConfigList.getLength(); i++) {
